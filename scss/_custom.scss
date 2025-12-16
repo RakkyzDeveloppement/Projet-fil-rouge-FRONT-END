@@ -1,21 +1,8 @@
-// Custom.scss
-// Option A: Include all of Bootstrap
-
-// Include any default variable overrides here (though functions won’t be available)
-
-@use "../node_modules/bootstrap/scss/bootstrap";
-
-$primary: #906427 !default;
+$primary: #906427;
 $secondary: #B6AC97;
 $dark:#392C1E;
 $black:  #292222;
 $font-family-sans-serif: "Montserrat", sans-serif !default;
-
-:root {
-    --bs-font-sans-serif: $font-family-sans-serif;
-    --bs-primary: $primary;
-}
+$font-family-serif:"Hind Madurai", serif !default;
 
 
-
-// Then add additional custom code here
