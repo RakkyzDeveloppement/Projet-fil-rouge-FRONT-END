@@ -89,10 +89,18 @@ p {
         display: flex;
         justify-content: space-between;
         opacity: 0;
-        transform: all à.3s;
+        transform: all 0.3s;
     }
 }
 
 .form-label {
     color: $primary;
+}
+
+.allreservations {
+    a {
+        display: block;
+        color: $black;
+        padding: 10px;
+    }
 }
