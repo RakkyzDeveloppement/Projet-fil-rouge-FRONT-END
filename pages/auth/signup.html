@@ -17,17 +17,35 @@
   <div class="mb-3">
     <label for="emailinput" class="form-label">Email</label>
     <input type="email" class="form-control" id="emailinput" placeholder="test@email.fr">
+    <div class="invalid-feedback">
+      Le mail n'est pas au bon format !
+    </div>
+    <div class="valid-feedback">
+      Mail valide ! 
+    </div>
   </div>
   <div class="mb-3">
     <label for="passwordinput" class="form-label">Mot de passe</label>
     <input type="password" class="form-control" id="passwordinput">
+    <div class="invalid-feedback">
+      Le mot de passe ne correspond pas aux exigences : minimum 8 caractères , comprenant au moins 1 lettre majuscules , 1 chiffre , et un caractère spécial 
+    </div>
+    <div class="valid-feedback">
+      Le mot de passe correspond aux exigences!
+    </div>
   </div>
     <div class="mb-3">
     <label for="validatepasswordinput" class="form-label">Validez votre mot de passe</label>
     <input type="password" class="form-control" id="validatepasswordinput">
+    <div class="invalid-feedback">
+      Les mot de passes ne correspondes pas !
+    </div>
+    <div class="valid-feedback">
+      Les mot de passes correspondes !
+    </div>
   </div>
   <div class="text-center">
-      <button type="submit" class="btn btn-primary">Inscription</button>
+      <button type="submit" class="btn btn-primary" id="btn-validation-inscription">Inscription</button>
   </div>
 </form>
    <div class="text-center pt-3">
