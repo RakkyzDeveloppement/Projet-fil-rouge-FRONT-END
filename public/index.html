@@ -38,9 +38,12 @@
         <li class="nav-item">
           <a class="nav-link" href="/account" data-link>Mon compte</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" data-show="disconnected">
           <a class="nav-link" href="/signin" data-link>Connexion</a>
         </li>
+        <li class="nav-item" data-show="connected">
+          <button class="nav-link" id="signout-btn" data-link>Déconnexion</button>
+        </li>  
       </ul>
     </div>
   </div>
@@ -69,7 +72,7 @@
           </div>
         </div>
       </footer>
-
+  <script src="/js/script.js"></script>
   <script type="module" src="/js/Router/router.js"></script>
 
 </body>

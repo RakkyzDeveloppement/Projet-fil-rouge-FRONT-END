@@ -2,7 +2,7 @@ import { allRoutes, websiteName } from "./allRoutes.js";
 import Route from "./Route.js";
 
 // Route 404
-const route404 = new Route("404", "Page introuvable", "/pages/404.html");
+const route404 = new Route("404", "Page introuvable", "/pages/404.html", []);
 
 // Récupérer la route correspondant à l'URL
 const getRouteByUrl = (url) => {
@@ -14,6 +14,22 @@ const getRouteByUrl = (url) => {
 const LoadContentPage = async () => {
   const path = window.location.pathname;
   const actualRoute = getRouteByUrl(path);
+
+  // Vérifier les droits à la page
+  const allRolesArray = actualRoute.authorize ?? [];
+
+  if(allRolesArray.length > 0) {
+    if(allRolesArray.includes("disconnected")) {
+      if(isConnected()) {
+        window.location.replace("/");
+      }
+    } else {
+      const roleUser = getRole();
+      if(!allRolesArray.includes(roleUser)) {
+        window.location.replace("/");
+      }
+    }
+  }
 
   try {
     // Fetch et injection du HTML
@@ -44,6 +60,10 @@ const LoadContentPage = async () => {
 
     // Changement du titre
     document.title = `${actualRoute.title} - ${websiteName}`;
+
+    // Afficher et masquer les éléments en fonction du rôle
+
+    showAndHideElementsForRoles();
 
     // Réattacher les listeners sur les liens injectés
     document.querySelectorAll("a[data-link]").forEach(link => {
